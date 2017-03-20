@@ -22,8 +22,8 @@ public class AndGate extends Gate {
 		}
 		if(index==1){
 			nandGate.connect(emitter, 1);
-			nandGate1.connect(new MockEmitter(nandGate.read()), 0);
-			nandGate1.connect(new MockEmitter(nandGate.read()), 1);
+			nandGate1.connect(nandGate, 0);
+			nandGate1.connect(nandGate, 1);
 		}
 	}
 }

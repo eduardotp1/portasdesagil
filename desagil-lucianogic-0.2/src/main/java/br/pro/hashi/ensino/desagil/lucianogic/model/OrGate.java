@@ -27,8 +27,8 @@ public class OrGate extends Gate{
 		if(index==1){
 			nandGate1.connect(emitter, 0);
 			nandGate1.connect(emitter, 1);
-			nandGate2.connect(new MockEmitter(nandGate.read()), 0);
-			nandGate2.connect(new MockEmitter(nandGate1.read()), 1);			
+			nandGate2.connect(nandGate, 0);
+			nandGate2.connect(nandGate1, 1);			
 		}
 	}
 }
