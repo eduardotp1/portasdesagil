@@ -51,7 +51,7 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 		// A componente JLabel representa simplesmente um texto fixo.
 		// https://docs.oracle.com/javase/tutorial/uiswing/components/label.html
 		color = new Color(led.getR(),led.getG(),led.getB());
-	    ledButton.setBackground(color);
+	
 	    ledButton.setBorder(new RoundedBorder(50));
 	    ledButton.addActionListener(this);
 	   
@@ -113,7 +113,11 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 		led.connect(gate, 0);
 		System.out.println(led.isOn());
 	
-		ledButton.setEnabled(led.isOn());
+		if(led.isOn()){
+			   ledButton.setBackground(color); }
+		else {
+			makeColorGray ();
+			}
 		
 		
 		}
