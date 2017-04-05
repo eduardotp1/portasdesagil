@@ -24,7 +24,7 @@ public class MainView extends JPanel implements ActionListener {
 	// A componente JComboBox representa um menu.
 	// https://docs.oracle.com/javase/tutorial/uiswing/components/combobox.html
 	private JComboBox<Gate> comboBox;
-
+	protected static JFrame frame;
 	private GateView gateView;
 
 
@@ -71,7 +71,8 @@ public class MainView extends JPanel implements ActionListener {
 		addGateView(gate);
 
 		// Necessario para atualizar a janela.
-		JFrame frame = (JFrame) SwingUtilities.getRoot(this);
+		frame = (JFrame) SwingUtilities.getRoot(this);
+		
 		frame.pack();
 	}
 }
